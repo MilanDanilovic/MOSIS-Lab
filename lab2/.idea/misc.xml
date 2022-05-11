@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Korisnik/Desktop/MOSIS-Lab/lab2/app/src/main/res/layout/about.xml" value="0.1" />
+        <entry key="..\:/Users/Korisnik/Desktop/MOSIS-Lab/lab2/app/src/main/res/layout/activity_my_places_list.xml" value="0.1" />
+        <entry key="..\:/Users/Korisnik/Desktop/MOSIS-Lab/lab2/app/src/main/res/layout/content_my_places_list.xml" value="0.1" />
+        <entry key="..\:/Users/Korisnik/Desktop/MOSIS-Lab/lab2/app/src/main/res/menu/menu_my_places_list.xml" value="0.1" />
         <entry key="..\:/Users/janaa/Desktop/MyPlaces/app/src/main/res/layout-land/fragment_first.xml" value="0.264" />
         <entry key="..\:/Users/janaa/Desktop/MyPlaces/app/src/main/res/layout/about.xml" value="0.1" />
         <entry key="..\:/Users/janaa/Desktop/MyPlaces/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
@@ -13,7 +17,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
