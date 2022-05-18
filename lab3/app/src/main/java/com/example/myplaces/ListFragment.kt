@@ -7,28 +7,28 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.ListView
-import androidx.navigation.fragment.findNavController
-import com.example.myplaces.databinding.FragmentSecondBinding
+import androidx.fragment.app.viewModels
+import com.example.myplaces.databinding.FragmentListBinding
+import com.example.myplaces.model.MyPlacesViewModel
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
  */
-class SecondFragment : Fragment() {
+class ListFragment : Fragment() {
 
-    private lateinit var places: ArrayList<String>
-    private lateinit var listView: ListView
-    private var _binding: FragmentSecondBinding? = null
+    private var _binding: FragmentListBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+    private val myPlacesViewModel : MyPlacesViewModel by viewModels()
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentSecondBinding.inflate(inflater, container, false)
+        _binding = FragmentListBinding.inflate(inflater, container, false)
         return binding.root
 
     }
@@ -36,16 +36,15 @@ class SecondFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        places = ArrayList<String>()
-        places.add("Tvrdjava")
-        places.add("Cair")
-        places.add("Park Svetog Save")
-        places.add("Trg Kralja Milana")
+        myPlacesViewModel.myPlacesList = ArrayList<String>()
+        myPlacesViewModel.addPlace("Tvrdjava")
+        myPlacesViewModel.addPlace("Cair")
+        myPlacesViewModel.addPlace("Park Svetog Save")
+        myPlacesViewModel.addPlace("Trg Kralja Milana")
 
-        listView = requireView().findViewById<ListView>(R.id.my_places_list)
+        val myPlacesList : ListView = requireView().findViewById<ListView>(R.id.my_places_list)
 
-        val adapter = ArrayAdapter<String>(view.context,android.R.layout.simple_list_item_1,places)
-        listView.adapter = adapter
+        myPlacesList.adapter = ArrayAdapter<String>(view.context,android.R.layout.simple_list_item_1, myPlacesViewModel.myPlacesList)
     }
 
     override fun onDestroyView() {
